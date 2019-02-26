@@ -46,7 +46,7 @@ fi
 debugme echo "SAUCE_ACCESS_KEY: ${SAUCE_ACCESS_KEY}"
 debugme echo "USER_ID: ${SAUCE_USERNAME}"
 
-which pip > /dev/null || (sudo apt -qq update > /dev/null 2>&1; sudo apt -y -qq install python-pip > /dev/null 2>&1)
+which pip > /dev/null || (echo "apt update"; sudo apt -qq update > /dev/null 2>&1; echo "apt install python-pip"; sudo apt -y -qq install python-pip > /dev/null 2>&1; echo "python-pip installed";)
 pip install -q requests
 
 cmd_choice=$CMD_CHOICE
